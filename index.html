@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tugas 5 Kartu Produk Toko &mdash; Dimas Prasatya (2510010465)</title>
+    <!-- Google Fonts: Poppins, Plus Jakarta Sans, dan JetBrains Mono -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500;600;700&family=Plus+Jakarta+Sans:ital,wght@0,400;0,600;0,700;1,400&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!--
+        Dikerjakan oleh : Dimas Prasatya
+        NPM             : 2510010465
+        Kelas           : 3A NonReguler BJB
+        Mata Kuliah     : Pemrograman Web 1 (Pertemuan 5 - CSS Box Model, Display & Position)
+    -->
+
+    <header>
+        <nav class="navbar-toko" aria-label="Navigasi Utama Toko">
+            <div class="navbar-inner">
+                <a href="#profil-toko" class="brand-toko">DimasKingg<span>Store</span>
+                <div class="menu-nav">
+                    <a href="#profil-toko" class="aktif">1. Profil &amp; Kampus</a>
+                    <a href="#katalog-produk">2. Katalog Produk</a>
+                    <a href="#info-pemesanan">3. Info Box Model</a>
+                </div>
+                <span class="info-keranjang" id="indikator-keranjang">Keranjang: 0 Item</span>
+            </div>
+        </nav>
+    </header>
+
+    <main class="wadah-utama">
+        <section id="profil-toko" class="header-profil">
+            <h1>Toko Perlengkapan Kuliah &amp; Hobi &mdash; Dimas Prasatya</h1>
+            <div class="identitas-npm">NPM: 2510010465 &bull; Kelas: 3A NonReguler BJB &bull; UNISKA MAB</div>
+
+            <div class="kotak-tentang">
+                <h2>Tentang Diri, Kampus &amp; Hobi Pemilik Toko</h2>
+                <p>
+                    Halo! Perkenalkan, nama saya <span class="teks-oranye">Dimas Prasatya</span> (NPM <strong>2510010465</strong>). Saya adalah mahasiswa semester 3 yang sedang menempuh pendidikan pada Program Studi <span class="teks-hijau">S1 Teknik Informatika</span> di Universitas Islam Kalimantan Muhammad Arsyad Al Banjari (Kelas 3A NonReguler BJB). Melalui mata kuliah <span class="teks-oranye">Pemrograman Web 1</span> Pertemuan 5, saya merancang halaman <strong>Kartu Produk Toko</strong> ini dengan menerapkan konsep <em>CSS Box Model</em>, <em>Display</em>, dan <em>Position</em>.
+                </p>
+                <p>
+                    Seluruh produk pilihan di katalog ini terinspirasi dari aktivitas perkuliahan saya di kampus serta hobi saya di waktu luang, yaitu <span class="teks-hijau">bermain game</span>, <span class="teks-hijau">mengeksplorasi CSS dan JavaScript</span>, <span class="teks-hijau">mendengarkan musik santai</span>, serta <span class="teks-hijau">berolahraga ringan</span> agar tetap bugar.
+                </p>
+            </div>
+        </section>
+
+        <section id="katalog-produk">
+            <h2 class="judul-kategori-sticky">
+                Katalog Perlengkapan Informatika &amp; Hobi Pilihan
+                <span>4 Produk Tersedia</span>
+            </h2>
+
+            <div id="status-beli" class="kotak-status-beli" role="status" aria-live="polite"></div>
+
+            <div class="daftar-produk">
+
+                <article class="kartu-produk">
+                    <span class="badge-produk badge-oranye">Terlaris</span>
+                    <!-- 4. Elemen dengan overflow:hidden + border-radius -->
+                    <div class="bungkus-gambar">
+                        <img src="img/produk-1-setup-meja.jpg" alt="Paket Setup Meja Belajar dan Gaming Mahasiswa">
+                    </div>
+                    <span class="kategori-kecil">Kuliah &amp; Gaming</span>
+                    <h3 class="nama-produk">Paket Desk Setup Belajar &amp; Gaming</h3>
+                    <p class="deskripsi-produk">
+                        Set perlengkapan meja belajar ergonomis dengan lampu kerja hangat dan dudukan monitor untuk menunjang tugas serta bermain game.
+                    </p>
+                    <div class="baris-harga-beli">
+                        <div class="harga-produk">
+                            <span class="harga-coret">Rp 450.000</span>
+                            Rp 349.000
+                        </div>
+                        <button type="button" class="tombol-beli" onclick="beliProduk('Paket Desk Setup Belajar & Gaming', 'Rp 349.000')">Beli</button>
+                    </div>
+                </article>
+
+                <!-- KARTU PRODUK 2 -->
+                <article class="kartu-produk">
+                    <span class="badge-produk badge-hijau">Baru</span>
+                    <div class="bungkus-gambar">
+                        <img src="img/produk-2-modul-web.jpg" alt="Buku Panduan Praktis Eksplorasi HTML CSS dan JavaScript">
+                    </div>
+                    <span class="kategori-kecil">Eksplorasi Web</span>
+                    <h3 class="nama-produk">Bundel Modul HTML5, CSS &amp; JS</h3>
+                    <p class="deskripsi-produk">
+                        Buku panduan praktikum Pemrograman Web 1 lengkap dengan studi kasus Box Model, Position, dan latihan interaktif bagi mahasiswa Teknik Informatika.
+                    </p>
+                    <div class="baris-harga-beli">
+                        <div class="harga-produk">
+                            <span class="harga-coret">Rp 165.000</span>
+                            Rp 129.000
+                        </div>
+                        <button type="button" class="tombol-beli" onclick="beliProduk('Bundel Modul HTML5, CSS & JS', 'Rp 129.000')">Beli</button>
+                    </div>
+                </article>
+
+                <article class="kartu-produk">
+                    <span class="badge-produk badge-oranye">Diskon 20%</span>
+                    <div class="bungkus-gambar">
+                        <img src="img/produk-3-headphone-lari.jpg" alt="Headphone Wireless dan Perlengkapan Olahraga Ringan">
+                    </div>
+                    <span class="kategori-kecil">Musik &amp; Olahraga</span>
+                    <h3 class="nama-produk">Headphone Santai &amp; Sport Pack</h3>
+                    <p class="deskripsi-produk">
+                        Paket headphone nirkabel bersuara jernih untuk mendengarkan musik santai.
+                    </p>
+                    <div class="baris-harga-beli">
+                        <div class="harga-produk">
+                            <span class="harga-coret">Rp 350.000</span>
+                            Rp 279.000
+                        </div>
+                        <button type="button" class="tombol-beli" onclick="beliProduk('Headphone Santai & Sport Pack', 'Rp 279.000')">Beli</button>
+                    </div>
+                </article>
+
+                <article class="kartu-produk">
+                    <span class="badge-produk badge-tua">Promo Kampus</span>
+                    <div class="bungkus-gambar">
+                        <img src="img/produk-4-keyboard-gamepad.jpg" alt="Keyboard Mekanikal dan Gamepad Wireless">
+                    </div>
+                    <span class="kategori-kecil">Ngoding &amp; Game</span>
+                    <h3 class="nama-produk">Mechanical Keyboard &amp; Gamepad</h3>
+                    <p class="deskripsi-produk">
+                        Kombinasi keyboard mekanikal tactile yang nyaman untuk mengetik kode CSS.
+                    </p>
+                    <div class="baris-harga-beli">
+                        <div class="harga-produk">
+                            <span class="harga-coret">Rp 520.000</span>
+                            Rp 415.000
+                        </div>
+                        <button type="button" class="tombol-beli" onclick="beliProduk('Mechanical Keyboard & Gamepad', 'Rp 415.000')">Beli</button>
+                    </div>
+                </article>
+
+            </div>
+        </section>
+
+        <section id="info-pemesanan" class="kotak-catatan-boxmodel">
+            <p>
+                Halaman <strong>Kartu Produk Toko</strong> ini telah memenuhi seluruh spesifikasi Tugas Mandiri 5 Pemrograman Web 1:
+            </p>
+            <div>
+                <span class="item-fitur-css">* { box-sizing: border-box; }</span>
+                <span class="item-fitur-css">display: inline-block (4 Kartu)</span>
+                <span class="item-fitur-css">position: fixed (Navbar + Padding Body)</span>
+                <span class="item-fitur-css">position: sticky (Sub-Judul Kategori)</span>
+                <span class="item-fitur-css">position: relative + absolute (Badge Kartu)</span>
+                <span class="item-fitur-css">overflow: hidden + border-radius (Gambar)</span>
+                <span class="item-fitur-css">transition + :hover (Kartu &amp; Tombol Beli)</span>
+            </div>
+        </section>
+
+        <footer class="kaki-halaman">
+           Tugas 5 Pemrograman Web 1
+        </footer>
+    </main>
+
+    <script>
+        var totalKeranjang = 0;
+        function beliProduk(namaProduk, hargaProduk) {
+            totalKeranjang += 1;
+            var badgeKeranjang = document.getElementById('indikator-keranjang');
+            if (badgeKeranjang) {
+                badgeKeranjang.textContent = 'Keranjang: ' + totalKeranjang + ' Item';
+            }
+            var kotakStatus = document.getElementById('status-beli');
+            if (kotakStatus) {
+                kotakStatus.textContent = 'Berhasil menambahkan "' + namaProduk + '" (' + hargaProduk + ') ke keranjang belanja DimasTech Store! Total item: ' + totalKeranjang + '.';
+                kotakStatus.classList.add('tampil');
+            }
+        }
+    </script>
+</body>
+</html>
